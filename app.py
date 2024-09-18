@@ -52,14 +52,14 @@ def send_form():
     file = request.files['file']
     stream = ioe.StringIO(file.stream.read().decode('utf-8'))
     df = pd.read_csv(stream)
-    lida = Manager(text_gen=llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz'))  # !! api key
+    lida = Manager(text_gen=llm("openai", api_key=''))  # !! api key
     textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
     summary = lida.summarize(data=df,summary_method="default", textgen_config=textgen_config)
     goals = lida.goals(summary, n=2, textgen_config=textgen_config)
     '''
     info = get_data(request.form)
     lida = Manager(
-        text_gen=llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz'))
+        text_gen=llm("openai", api_key=''))
     textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
 
     summary = lida.summarize("https://raw.githubusercontent.com/uwdata/draco/master/data/cars.csv",
@@ -178,7 +178,7 @@ def send_form1():
     exit()
 
     lida = Manager(
-        text_gen=llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz'))
+        text_gen=llm("openai", api_key=''))
     textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
 
     summary = lida.summarize("https://raw.githubusercontent.com/uwdata/draco/master/data/cars.csv",
@@ -292,7 +292,7 @@ def visualization():
 
     # file = request.files['file']
     # df = pd.read_csv(file)
-    # lida = Manager(text_gen=llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz'))  # !! api key
+    # lida = Manager(text_gen=llm("openai", api_key=''))  # !! api key
     # textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
     # summary = lida.summarize(data=df,summary_method="default", textgen_config=textgen_config)
     # goals = lida.goals(summary, n=2, textgen_config=textgen_config)
@@ -300,7 +300,7 @@ def visualization():
     selected_goal_index = info[goal_index]
     selected_library = info[library]
     lida = Manager(
-        text_gen=llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz'))  # !! api key
+        text_gen=llm("openai", api_key=''))  # !! api key
     textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
 
     summary = lida.summarize("https://raw.githubusercontent.com/uwdata/draco/master/data/cars.csv",

@@ -8,7 +8,7 @@ import json
 # 通过编写 Python 脚本（使用 Streamlit 的 API）来构建用户界面，直接利用你的数据科学代码来创建应用，而无需成为前端开发者或学习复杂的 Web 开发框架
 # 支持多种数据可视化库，如 Matplotlib、Pandas、Plotly、Altair 等。你可以轻松地将这些库生成的图表嵌入到你的 Streamlit 应用中，创建丰富的数据可视化效果
 import pandas as pd
-lida = Manager(text_gen = llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz')) # !! api key
+lida = Manager(text_gen = llm("openai", api_key='')) # !! api key
 textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
 
 summary = lida.summarize("https://raw.githubusercontent.com/uwdata/draco/master/data/cars.csv", summary_method="default", textgen_config=textgen_config)

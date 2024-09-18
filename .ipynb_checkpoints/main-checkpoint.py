@@ -2,7 +2,7 @@
 #
 # client = OpenAI(
 #     base_url="https://api.cpdd666.cn/v1",
-#     api_key="sk-oq7IcXprdevBDrveC64c42171eAd4dC0Aa7043974b6030Be"
+#     api_key=""
 # )
 #
 # completion = client.chat.completions.create(
@@ -23,7 +23,7 @@
 #     display(goal)
 
 from lida import Manager, TextGenerationConfig , llm
-lida = Manager(text_gen = llm("openai", api_key='sk-proj-KECsGXY1JAYok3NdNx89T3BlbkFJOIKR0h02BG5u8CZf7lvz')) # !! api key
+lida = Manager(text_gen = llm("openai", api_key='')) # !! api key
 textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
 
 summary = lida.summarize("https://raw.githubusercontent.com/uwdata/draco/master/data/cars.csv", summary_method="default", textgen_config=textgen_config)
